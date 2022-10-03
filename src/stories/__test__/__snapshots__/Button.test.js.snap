@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Component renders correctly 1`] = `
+<button
+  class="sc-bcXHqe fKYmby"
+  data-testid="label"
+  kind="filled"
+>
+  Submit
+</button>
+`;
+
+exports[`Button Component should render filled button of large size 1`] = `undefined`;
+
+exports[`Button Component should render filled button of small size 1`] = `undefined`;
+
+exports[`Button Component should render outlined button with medium size 1`] = `undefined`;
