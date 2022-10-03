@@ -1,46 +1,53 @@
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 const styles = {
   color(props) {
     if (props.color) {
       return props.color;
     } 
-    return "black"
+    return ''
   },
   backgroundColor(props) {
-    if (props.backgroundColor) {
-      return props.backgroundColor;
+    if (props.backgroundcolor) {
+      return props.backgroundcolor;
     } 
-    return "black"
+    return ''
   },
   borderRadius(props) {
     if (props.borderRadius) {
       return props.borderRadius;
     }
-    if (props.shape === "roundedEdge") {
+    if (props.shape === 'roundedEdge') {
       return '4px';
     }
-    if (props.shape === "rounded")
-    return "10px"
+    if (props.shape === 'rounded') {
+      return '10px'
+    }
   },
   fontSize(props) {
-    if(props.fontSize) {
-      return props.fontSize
+    if (props.fontSize === 'sm') {
+      return '10px'
     }
-   return "12px"
+    if (props.fontSize === 'md') {
+      return '12px'
+    }
+    if (props.fontSize === 'lg') {
+      return '14px'
+    }
+   return ''
   },
   padding(props) {
     if(props.padding) {
       return props.padding
     } 
-    return '2px 12px';
+    return '';
   }
 };
 
-const Badge = styled(({ color, kind, shape, size, ...props }) => (
-  <div {...props} />
+const Badge = styled(({ children, ...props }) => (
+  <div {...props}>{children}</div>
 ))`
     display: inline-flex;
     -webkit-box-align: center;
@@ -58,17 +65,18 @@ const Badge = styled(({ color, kind, shape, size, ...props }) => (
 
 Badge.propTypes = {
   color: PropTypes.string,
-  shape: PropTypes.oneOf(["roundedEdge", "rounded"]),
-  fontSize: PropTypes.string,
-  backgroundColor: PropTypes.string,
+  shape: PropTypes.oneOf(['roundedEdge', 'rounded']),
+  fontSize: PropTypes.oneOf(['sm', 'md', 'lg']),
+  backgroundcolor: PropTypes.string,
   padding: PropTypes.string
 };
 
 Badge.defaultProps = {
-  backgroundColor: "#ffa553",
-  color: "black",
-  shape: "roundedEdge",
-  fontSize: "12px",
+  backgroundcolor: '#ffa553',
+  color: 'black',
+  shape: 'roundedEdge',
+  fontSize: 'md',
+  padding: '2px 12px'
 };
 
 export default Badge;

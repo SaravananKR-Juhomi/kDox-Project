@@ -1,8 +1,8 @@
 import React from "react";
-import Badge from "../components/Badge";
+import Badge from "../components/Badge/Badge"
 
 export default {
-  title: "Badge",
+  title: "components/Badge",
   component: Badge,
   parameters: {
     layout: "fullscreen",
@@ -14,26 +14,26 @@ const Template = (args) => <Badge {...args}>{args.text}</Badge>;
 export const MediumBadge = Template.bind({});
 MediumBadge.args = {
   text: "Misplaced",
-  backgroundColor: "#ffa553",
+  backgroundcolor: "#ffa553",
   shape: "roundedEdge",
-  fontSize: "12px",
+  fontSize: "md",
 };
 
 export const SmallBadge = Template.bind({});
 SmallBadge.args = {
   text: "modified",
-  backgroundColor: "#53d7ff",
+  backgroundcolor: "#53d7ff",
   shape: "rounded",
-  fontSize: "12px",
+  fontSize: "sm",
   padding: "0px 10px",
 };
 
 export const LargeBadge = Template.bind({});
 LargeBadge.args = {
   text: "Untagged",
-  backgroundColor: "#ffa553",
+  backgroundcolor: "#ffa553",
   shape: "roundedEdge",
-  fontSize: "14px",
+  fontSize: "lg",
 };
 
 export const RightArrowBadge = Template.bind({});
